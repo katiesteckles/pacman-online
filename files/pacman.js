@@ -3252,7 +3252,7 @@ var initRenderer = function(){
 
             // draw fps
             if (DEBUG) {
-                ctx.font = (tileSize-2) + "px ArcadeR";
+                ctx.font = (tileSize-2) + "px PressStart2P";
                 ctx.textBaseline = "bottom";
                 ctx.textAlign = "right";
                 ctx.fillStyle = "#333";
@@ -3476,7 +3476,7 @@ var initRenderer = function(){
 
         // draw a center screen message (e.g. "start", "ready", "game over")
         drawMessage: function(text, color, x,y) {
-            ctx.font = tileSize + "px ArcadeR";
+            ctx.font = tileSize + "px PressStart2P";
             ctx.textBaseline = "top";
             ctx.textAlign = "right";
             ctx.fillStyle = color;
@@ -3886,10 +3886,10 @@ var initRenderer = function(){
                 }
                 if (!isCutscene) {
                     if (level >= 100) {
-                        bgCtx.font = (tileSize-3) + "px ArcadeR";
+                        bgCtx.font = (tileSize-3) + "px PressStart2P";
                     }
                     else {
-                        bgCtx.font = (tileSize-1) + "px ArcadeR";
+                        bgCtx.font = (tileSize-1) + "px PressStart2P";
                     }
                     bgCtx.textBaseline = "middle";
                     bgCtx.fillStyle = "#777";
@@ -3941,7 +3941,7 @@ var initRenderer = function(){
 
         // draw the current score and high score
         drawScore: function() {
-            ctx.font = tileSize + "px ArcadeR";
+            ctx.font = tileSize + "px PressStart2P";
             ctx.textBaseline = "top";
             ctx.fillStyle = "#FFF";
 
@@ -4643,7 +4643,7 @@ Menu.prototype = {
 
     draw: function(ctx) {
         if (this.title) {
-            ctx.font = tileSize+"px ArcadeR";
+            ctx.font = tileSize+"px PressStart2P";
             ctx.textBaseline = "middle";
             ctx.textAlign = "center";
             ctx.fillStyle = "#FFF";
@@ -4685,10 +4685,10 @@ var inGameMenu = (function() {
         vcr.onHudDisable();
     });
     btn.setText("MENU");
-    btn.setFont(tileSize+"px ArcadeR","#FFF");
+    btn.setFont(tileSize+"px PressStart2P","#FFF");
 
     // confirms a menu action
-    var confirmMenu = new Menu("QUESTION?",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var confirmMenu = new Menu("QUESTION?",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     confirmMenu.addTextButton("YES", function() {
         confirmMenu.disable();
         confirmMenu.onConfirm();
@@ -4711,7 +4711,7 @@ var inGameMenu = (function() {
     };
 
     // regular menu
-    var menu = new Menu("PAUSED",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("PAUSED",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     menu.addTextButton("RESUME", function() {
         menu.disable();
     });
@@ -4723,7 +4723,7 @@ var inGameMenu = (function() {
     menu.backButton = menu.buttons[0];
 
     // practice menu
-    var practiceMenu = new Menu("PAUSED",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var practiceMenu = new Menu("PAUSED",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     practiceMenu.addTextButton("RESUME", function() {
         hideMainMenu();
         vcr.onHudEnable();
@@ -4753,7 +4753,7 @@ var inGameMenu = (function() {
     practiceMenu.backButton = practiceMenu.buttons[0];
 
     // cheats menu
-    var cheatsMenu = new Menu("CHEATS",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var cheatsMenu = new Menu("CHEATS",2*tileSize,5*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     cheatsMenu.addToggleTextButton("INVINCIBLE",
         function() {
             return pacman.invincible;
@@ -9597,7 +9597,7 @@ var homeState = (function(){
         menu.disable();
     };
 
-    var menu = new Menu("CHOOSE YOUR PACMAN GAME",2*tileSize,0*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("CHOOSE YOUR PACMAN GAME",2*tileSize,0*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     var getIconAnimFrame = function(frame) {
         frame = Math.floor(frame/3)+1;
         frame %= 4;
@@ -9681,7 +9681,7 @@ var learnState = (function(){
         clearCheats();
     };
 
-    var menu = new Menu("LEARN", 2*tileSize,-tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("LEARN", 2*tileSize,-tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     menu.addSpacer(7);
     menu.addTextButton("BACK",
         function() {
@@ -9928,7 +9928,7 @@ var gameTitleState = (function() {
 
             resetTitle();
             renderer.renderFunc(function(ctx){
-                ctx.font = tileSize+"px ArcadeR";
+                ctx.font = tileSize+"px PressStart2P";
                 ctx.fillStyle = nameColor;
                 ctx.textAlign = "center";
                 ctx.textBaseline = "top";
@@ -9959,7 +9959,7 @@ var preNewGameState = (function() {
         switchState(s,fade);
     };
 
-    var menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
 
     menu.addSpacer(2);
     menu.addTextButton("PLAY",
@@ -10066,7 +10066,7 @@ var selectActState = (function() {
         // set buttons starting at the given act
         startAct = act;
 
-        menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+        menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
         var i;
         var range;
         menu.addSpacer(2);
@@ -10171,7 +10171,7 @@ var selectLevelState = (function() {
     var buildMenu = function(act) {
         var range = getActRange(act);
 
-        menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+        menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
         var i;
         menu.addSpacer(2);
         if (range[0] < range[1]) {
@@ -10236,7 +10236,7 @@ var aboutGameState = (function() {
         switchState(s,fade);
     };
 
-    var menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
 
     menu.addSpacer(8);
     menu.addTextButton("BACK",
@@ -10249,7 +10249,7 @@ var aboutGameState = (function() {
     var numDescLines;
 
     var drawDesc = function(ctx){
-        ctx.font = tileSize+"px ArcadeR";
+        ctx.font = tileSize+"px PressStart2P";
         ctx.fillStyle = "#FFF";
         ctx.textBaseline = "top";
         ctx.textAlign = "center";
@@ -10302,7 +10302,7 @@ var cutSceneMenuState = (function() {
         }
     };
 
-    var menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("",2*tileSize,0,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
 
     menu.addSpacer(2);
     menu.addTextButton("CUTSCENE 1",
@@ -10355,7 +10355,7 @@ var scoreState = (function(){
         menu.disable();
     };
 
-    var menu = new Menu("", 2*tileSize,mapHeight-6*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("", 2*tileSize,mapHeight-6*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     menu.addTextButton("BACK",
         function() {
             exitTo(homeState);
@@ -10400,7 +10400,7 @@ var scoreState = (function(){
             ctx.fillRect(b.x, b.y, s, s);
         }
 
-        ctx.font = tileSize+"px ArcadeR";
+        ctx.font = tileSize+"px PressStart2P";
         ctx.textBaseline = "top";
         ctx.textAlign = "right";
         var scoreColor = "#AAA";
@@ -10587,7 +10587,7 @@ var aboutState = (function(){
         menu.disable();
     };
 
-    var menu = new Menu("", 2*tileSize,mapHeight-11*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px ArcadeR", "#EEE");
+    var menu = new Menu("", 2*tileSize,mapHeight-11*tileSize,mapWidth-4*tileSize,3*tileSize,tileSize,tileSize+"px PressStart2P", "#EEE");
     menu.addTextButton("GO TO PROJECT PAGE",
         function() {
             window.open("https://github.com/shaunew/Pac-Man");
@@ -10599,7 +10599,7 @@ var aboutState = (function(){
     menu.backButton = menu.buttons[menu.buttonCount-1];
 
     var drawBody = function(ctx) {
-        ctx.font = tileSize+"px ArcadeR";
+        ctx.font = tileSize+"px PressStart2P";
         ctx.textBaseline = "top";
         ctx.textAlign = "left";
 
@@ -13380,7 +13380,7 @@ var vcr = (function() {
     seekToggleBtn.setIcon(function(ctx,x,y,frame) {
         drawRewindSymbol(ctx,x,y,"#FFF");
     });
-    seekToggleBtn.setFont((tileSize-1)+"px ArcadeR", "#FFF");
+    seekToggleBtn.setFont((tileSize-1)+"px PressStart2P", "#FFF");
     var slowBtn = new ToggleButton(-w-pad-1,y,w,h,
         function() {
             return executive.getFramePeriod() == 1000/15;
